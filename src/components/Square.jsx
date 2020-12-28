@@ -11,7 +11,7 @@ function Square(props) {
     >
       <span>
         {props.value ? (
-          props.value == "X" ? (
+          props.value === "X" ? (
             <FaTimes size="100px" />
           ) : (
             <FaRegCircle size="100px" />

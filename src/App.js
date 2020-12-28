@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Container, Col, Button } from "react-bootstrap";
+import { Row, Container, Button } from "react-bootstrap";
 import { MdRefresh } from 'react-icons/md'
 import { Board } from './components'
 import './App.css'
@@ -12,7 +12,7 @@ function App() {
   const [winner, setWinner] = useState('')
 
   let setSquare = (i, j) => {
-    if (winner == '' && squares[i][j] == '') {
+    if (winner === '' && squares[i][j] === '') {
       squares[i][j] = turn
       setSquares([...squares])
 
@@ -22,7 +22,7 @@ function App() {
         if (checkForDraw(flatten())) {
           setWinner('Draw')
         } else {
-          setTurn(turn == 'X' ? 'O' : 'X')
+          setTurn(turn === 'X' ? 'O' : 'X')
         }
       }
     }
@@ -82,7 +82,7 @@ function App() {
         <Button variant="outline-danger" onClick={resetBoard}><MdRefresh size="1.5em" /> Reset</Button>
       </Row>
       {winner ? <Row className="justify-content-center align-items-center text-success my-2">
-        {winner == 'Draw' ? <h2 className="text-info">It's a Draw!</h2> : <h2 className="text-success">{winner} Won!!</h2>}
+        {winner === 'Draw' ? <h2 className="text-info">It's a Draw!</h2> : <h2 className="text-success">{winner} Won!!</h2>}
       </Row> : ''}
 
     </Container>
