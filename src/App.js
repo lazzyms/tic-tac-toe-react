@@ -65,23 +65,23 @@ function App() {
   }
 
   return (
-    <Container fluid className="bg-dark text-light p-5" style={{ height: '100vh' }}>
+    <Container fluid className="p-5" style={{ height: '100vh', width: 'max-content' }}>
       <Row className="justify-content-center">
         <h1>TIC-TAC-TOE</h1>
       </Row>
 
       <Container>
-        <Row className="justify-content-center align-items-center my-3">
+        <Row className="justify-content-center align-items-center my-3 mx-auto">
           <h2 className="text text-info">{turn + "'s Turn"}</h2>
         </Row>
       </Container>
-      <Row className="justify-content-center align-items-center my-5">
+      <Row className="justify-content-center align-items-center my-5 mx-auto">
         <Board squares={squares} turn={turn} setSquare={setSquare} />
       </Row>
-      <Row className="justify-content-center align-items-center text-success">
+      <Row className="justify-content-center align-items-center my-5 text-success">
         <Button variant="outline-danger" onClick={resetBoard}><MdRefresh size="1.5em" /> Reset</Button>
       </Row>
-      {winner ? <Row className="justify-content-center align-items-center text-success my-2">
+      {winner ? <Row className="justify-content-center align-items-center my-5 mx-auto">
         {winner === 'Draw' ? <h2 className="text-info">It's a Draw!</h2> : <h2 className="text-success">{winner} Won!!</h2>}
       </Row> : ''}
 

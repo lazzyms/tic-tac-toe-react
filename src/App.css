@@ -5,15 +5,16 @@
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 100px !important;
+  height: 100px !important;
   margin: 5px;
   padding: 5px;
   border-radius: 0 !important;
+  background-color: aquamarine !important;
 }
 
 .square:hover {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .square span {

@@ -5,8 +5,8 @@ import { FaTimes, FaRegCircle } from "react-icons/fa";
 function Square(props) {
   return (
     <Badge
-      variant="dark"
-      className="square"
+      bg="dark"
+      className="square col"
       onClick={() => props.setSquare(props.keyi, props.keyj)}
     >
       <span>

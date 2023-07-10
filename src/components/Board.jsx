@@ -3,10 +3,10 @@ import { Row, Card } from "react-bootstrap";
 
 function Board(props) {
   return (
-    <Card bg="secondary" text="light" style={{ width: "max-content" }}>
+    <Card bg="light" text="dark" style={{ width: "max-content" }}>
       <Card.Body>
         {props.squares.map((box, i) => (
-          <Row key={i} className="align-content-center justify-content-center">
+          <Row key={i} className="row align-content-center justify-content-center">
             {box.map((val, j) => (
               <Square
                 value={val}
