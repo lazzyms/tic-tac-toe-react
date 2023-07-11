@@ -12,8 +12,12 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Set environment variable for deployment branch
+        run: echo "BRANCH=gh-pages" >> $GITHUB_ENV
+      - name: Set environment variable for deployment folder
+        run: echo "FOLDER=build" >> $GITHUB_ENV
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          branch: ${{ env.BRANCH }} # The branch the action should deploy to.
+          folder: ${{ env.FOLDER }} # The folder the action should deploy.
